@@ -138,6 +138,14 @@ label {
   font-size: 12px;
 }
 
+footer {
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+}
+
 @keyframes shrink {
   from {
     width: 100%;

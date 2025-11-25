@@ -14,6 +14,9 @@ const editInput = document.getElementById("editInput");
 let currentEditId = null;
 let currentRemoveId = null;
 
+const currentYear = new Date().getFullYear();
+document.getElementById("footerDateSpan").textContent = currentYear;
+
 function getTasks() {
   return JSON.parse(localStorage.getItem("tasks")) || [];
 }
