@@ -2,9 +2,7 @@ const addWindow = document.getElementById("addWindow");
 const editWindow = document.getElementById("editWindow");
 const removeWindow = document.getElementById("removeWindow");
 const clearAllWindow = document.getElementById("clearAllWindow");
-const markAllCompletedWindow = document.getElementById(
-  "markAllCompletedWindow"
-);
+const markAllCompletedWindow = document.getElementById("markAllCompletedWindow");
 
 const notifyContainer = document.getElementById("notifyContainer");
 const taskCounter = document.getElementById("taskCounter");
@@ -201,7 +199,7 @@ function removeTask() {
 function updateTaskInLocalStorage(id, updatedFields) {
   let tasks = getTasks();
   tasks = tasks.map((task) =>
-    task.id === id ? {...task, ...updatedFields} : task
+    task.id === id ? { ...task, ...updatedFields } : task
   );
   setTasks(tasks);
 }
