@@ -11,6 +11,7 @@ A simple Windows 98-style To-Do List web application built with HTML, CSS, and J
 - Notifications for task actions
 - Saving storage using `localStorage`
 - Responsive design: works well on all devices and screen sizes
+- Styled with [98.css](https://jdan.github.io/98.css/) for the Windows 98 look.
 
 ## Demo
 
