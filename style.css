@@ -1,0 +1,183 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Pixelated MS Sans Serif", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(images/windows-old-wallpaper.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.task-list {
+  max-height: 50vh;
+  overflow-y: auto;
+  padding-right: 5px;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px inset;
+  padding: 5px;
+  margin: 5px 0;
+  word-break: break-word;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.window {
+  width: 90%;
+  max-width: 400px;
+}
+
+.extra-window {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 200;
+}
+
+.extra-window {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 200;
+  width: 90%;
+  max-width: 300px;
+}
+
+#notifyContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 200;
+}
+
+.notify {
+  width: 260px;
+  background: #c0c0c0;
+  border: 2px outset;
+  padding: 10px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notify button {
+  background: none;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.bar {
+  height: 4px;
+  background: #000080;
+  animation: shrink 3s linear forwards;
+  margin-top: 5px;
+}
+
+.window-style {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.window-style input {
+  width: 65%;
+  min-width: 100px;
+}
+
+.window-style button {
+  width: 30%;
+  min-width: 60px;
+}
+
+.task-btns {
+  margin-top: 5px;
+}
+
+button, label {
+  font-size: 12px;
+}
+
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .window {
+    width: 95%;
+    font-size: 14px;
+  }
+
+  .extra-window {
+    width: 95%;
+    bottom: 10px;
+  }
+
+  .window-style input {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .window-style button {
+    width: 100%;
+  }
+
+  .placeholder {
+    font-size: 12px;
+  }
+
+  #taskCounter {
+    font-size: 12px;
+  }
+
+  .task-btns {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+

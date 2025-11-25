@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To-Do App</title>
+  </head>
+  <body>
+    <div class="window">
+      <div class="title-bar">
+        <div class="title-bar-text">To-Do App</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <button class="button" onclick="openAddWindow()">Add Task</button>
+        <button class="button" onclick="openClearAllWindow()">Clear All</button>
+        <button class="button" onclick="openMarkAllCompletedWindow()">
+          Complete all
+        </button>
+        <ul class="task-list" id="taskList"></ul>
+        <div id="taskCounter"></div>
+      </div>
+    </div>
+
+    <div id="addWindow" class="window extra-window hidden">
+      <div class="title-bar">
+        <div class="title-bar-text">Add Task</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="closeAddWindow()"></button>
+        </div>
+      </div>
+      <div class="window-body window-style">
+        <input id="addInput" type="text" autocomplete="off" />
+        <button class="button" onclick="addTask()">Add</button>
+      </div>
+    </div>
+
+    <div
+      id="editWindow"
+      class="window extra-window hidden"
+    >
+      <div class="title-bar">
+        <div class="title-bar-text">Edit Task</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="closeEditWindow()"></button>
+        </div>
+      </div>
+      <div class="window-body window-style">
+        <input id="editInput" type="text" autocomplete="off" />
+        <button class="button" onclick="editTask()">Save</button>
+      </div>
+    </div>
+
+    <div
+      id="clearAllWindow"
+      class="window extra-window hidden"
+    >
+      <div class="title-bar">
+        <div class="title-bar-text">
+          Are you sure you want to clear all tasks?
+        </div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="closeClearAllWindow()"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <button class="button" onclick="clearAllTasks()">Yes</button>
+        <button class="button" onclick="closeClearAllWindow()">No</button>
+      </div>
+    </div>
+
+    <div
+      id="markAllCompletedWindow"
+      class="window extra-window hidden"
+    >
+      <div class="title-bar">
+        <div class="title-bar-text">
+          Are you sure you want to mark all tasks as completed?
+        </div>
+        <div class="title-bar-controls">
+          <button
+            aria-label="Close"
+            onclick="closeMarkAllCompletedWindow()"
+          ></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <button class="button" onclick="markAllCompleted()">Yes</button>
+        <button class="button" onclick="closeMarkAllCompletedWindow()">
+          No
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="removeWindow"
+      class="window extra-window hidden"
+    >
+      <div class="title-bar">
+        <div class="title-bar-text">
+          Are you sure you want to remove the task?
+        </div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="closeRemoveWindow()"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <button class="button" onclick="removeTask()">Yes</button>
+        <button class="button" onclick="closeRemoveWindow()">No</button>
+      </div>
+    </div>
+
+    <div id="notifyContainer" class="notify-container"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
